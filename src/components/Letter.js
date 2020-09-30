@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Letter = () => (<span>A</span>)
+const Letter = (prop) => (<span className={prop.className}> {prop.letter} </span>)
         
 
 export default Letter;

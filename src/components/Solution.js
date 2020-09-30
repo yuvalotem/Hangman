@@ -1,13 +1,23 @@
 import React, {Component} from 'react'
+import Letter from './Letter'
 
 class Solution extends Component{
+    generateLetterWord(word){
+        const lettersArray = []
+        for(let i in word){
+            if(this.props.letterStatus[word[i]]){
+                lettersArray.push(<Letter letter={word[i]} key={i} />)
+            }else{
+                lettersArray.push(<Letter letter={'_'} key={i} />)
+            }
+        }
+        return lettersArray
+    }
     render(){
-        let underScoreArray = ['_','_','_','_']
-        underScoreArray = underScoreArray.map(u => <span>{u}  </span>)
         return (
             <div>
-            {underScoreArray}
-            <p>Your ideal mode when coding</p>
+            {this.generateLetterWord(this.props.solution.word)}
+            <p>{this.props.solution.hint}</p>
             </div>
         )
     }
