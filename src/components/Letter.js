@@ -1,7 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 
+class Letter extends Component{
 
-const Letter = (prop) => (<span className={prop.className}> {prop.letter} </span>)
+    selectLetter = () =>{
+        this.props.selectLetter(this.props.letter)
+    }
+
+    render(){
+        return (<span className={this.props.className} onClick={this.selectLetter}> {this.props.letter} </span>)
+    } 
+}
         
 
 export default Letter;

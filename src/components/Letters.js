@@ -8,9 +8,9 @@ class Letters extends Component{
         for(let i in letters){
             // console.log(this.props.letterStatus[i]);
             if(this.props.letterStatus[i]){
-                lettersArray.push(<Letter letter={i} key={i} className='selected'  />)
+                lettersArray.push(<Letter letter={i} key={i} className='selected'  selectLetter={this.props.selectLetter} />)
             }else{
-                lettersArray.push(<Letter letter={i} key={i} className='non-selected'  />)
+                lettersArray.push(<Letter letter={i} key={i} className='non-selected'  selectLetter={this.props.selectLetter} />)
             }
         }
         return lettersArray
